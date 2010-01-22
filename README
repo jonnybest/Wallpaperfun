@@ -1,0 +1,16 @@
+*** Requires
+.net 3.5
+winapi (user32.dll)
+
+*** Tested on
+Windows Vista
+
+*** IDE
+Visual Studio 2010
+
+*** What it does
+Searches "Start in" folder for .jpg images and sets a random one as background image.
+If a switch/command line parameter %1 is present, it will attempt to set that as background instead.
+
+*** Warnings
+Can only run in user mode, do not start with System or Network Service accounts.
