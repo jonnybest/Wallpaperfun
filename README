@@ -1,3 +1,6 @@
+*** Using Wallpaperfun
+Put in a folder with .JPG images and run.
+
 *** Requires
 .net 3.5
 winapi (user32.dll)
