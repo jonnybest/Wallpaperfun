@@ -83,44 +83,5 @@ namespace Wallpaperfun
                 return myImages[myGenerator.Next(myImages.Length)];
             }
         }
-
-        static private void AutomatischDurchschalten(TimeSpan TotalDuration, TimeSpan SleepTime)
-        {
-            int numberoftimes = 0;
-            TimeSpan tempTime = TotalDuration.Duration();
-            while (tempTime > TimeSpan.Zero)
-            {
-                tempTime = tempTime.Subtract(SleepTime);
-                numberoftimes++;
-            }
-
-            AutomatischDurchschalten(SleepTime, numberoftimes);
-        }
-
-        static private void AutomatischDurchschalten(TimeSpan SleepTime, int nMal)
-        {
-            for (int i = 0; i < nMal; i++)
-			{
-                bool replaceImage = true;
-
-                string myImage = SelectRandomPicture(System.IO.Directory.GetCurrentDirectory());
-
-                if (myImage == null)
-                {
-                    replaceImage = false;
-                }
-                else if (myImage == GetCurrentWallpaper())
-                {
-                    myImage = SelectRandomPicture(System.IO.Directory.GetCurrentDirectory());
-                }
-
-                if (replaceImage)
-                {
-                    SetWallpaper(myImage, 0, 2);
-                }
-
-                Thread.Sleep(SleepTime);
-            }
-        }
     }
 }
